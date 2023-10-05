@@ -1,0 +1,103 @@
+body {
+	background-color: rgb(118, 127, 218);
+}
+
+#menu {
+
+}
+
+a {
+	float: left;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+a:hover {
+	background-color: #3e40c0;
+	color: floralwhite;
+	border-radius: 15%;
+}
+
+.core {
+	float: left;
+	padding: 10px;
+	text-align: center;
+}
+
+img {
+	float: left;
+	margin: 5px;
+	border-radius: 15%;
+}
+
+#OldPc {
+	width: 35%;
+}
+
+#Poleasing {
+	width: 50%;
+}
+
+#Gaming {
+	float: right;
+	width: 50%;
+	top: 50px;
+}
+
+#Eniac {
+	width: 50%;
+}
+
+#Ram {
+	float: right;
+	width: 50%;
+}
+
+#VR {
+	width: 50%;
+}
+
+#Graphic {
+	width: 50%;
+}
+
+.galery {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+td {
+	border : black solid 5px;
+	border-radius: 5%;
+	width: 25%;
+	padding: 5px;
+}
+
+p {
+	font-size: 17px;
+	text-align: justify;
+}
+
+#contact {
+	float: left;
+	margin: auto;
+	width: 50%;
+	padding: 10px;
+}
+
+ul {
+	list-style-type: none;
+	width: 97%;
+	display: table;
+	text-align: center;
+}
+
+li {
+	display: inline-block;;
+	float: none;
+}

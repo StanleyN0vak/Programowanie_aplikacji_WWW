@@ -4,20 +4,20 @@
 	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 	<meta http-equiv="Content-Language" content="pl" />
 	<meta name="Author" content="Mateusz Szymański" />
-	<link rel="stylesheet" href="myStyle.css">
+	<link rel="stylesheet" href="podstrony/myStyle.css">
 	<title>Komputer moją pasją</title>
 </head>
 <body>
-	<div id="menu">
+	<div class="menu">
 		<ul>
 			<li><a href="podstrony/Historia.html">Historia</a></li>
 			<li><a href="podstrony/Rodzaje Ramu.html">Rodzaje Ramu</a></li>
 			<li><a href="podstrony/Wirtualna rzeczywistość.html">Wirtualna rzeczywistość</a></li>
-			<li><a href="podstrony/Teraźniejszość.html">Teraźniejszość</a></li>
+			<li><a href="podstrony/Karty_graficzne.html">Karty Graficzne</a></li>
 			<li><a href="podstrony/Galeria.html">Galeria</a></li>
 		</ul>
 	</div>
-	<div id="core">
+	<div class="core">
 		<h1>Komputer moją pasją</h1>
 		<p>Strona jest poświęcona wyłącznie komputerom</p>
 		
@@ -49,14 +49,45 @@
 				</td>
 				<td>
 					<div class="image-container">
-						<img id="Poleasing" src=image/komputery_poleasingowe.jpg" alt="Poleasing PC">
-						<p class="opis">Komputery biurowe</p>
+						<img id="Poleasing" src="image/office.jpg" alt="Poleasing PC">
+						<p class="opis">Komputer stacjonarny, potocznie desktop (ang. desktop; na biurko) –
+							rodzaj komputera osobistego, który zwykle jest na stałe umiejscowiony przy biurku,
+							głównie ze względu na swoje gabaryty i ciężar.
+							Składa się z co najmniej trzech zasadniczych elementów:
+							jednostki systemowej, monitora i klawiatury.
+							Niegdyś istniał podział na komputery biurowe i domowe,
+							w którym domowe miały zazwyczaj mniejszą moc obliczeniową,
+							ale za to więcej możliwości multimedialnych.
+							Obecnie jednak ten podział zanikł,
+							gdyż multimedialność jest już standardem w komputerach PC,
+							a gry komputerowe – czyli jedno z popularnych zastosowań komputerów domowych –
+							często wymagają dla wykorzystania pełni ich możliwości naprawdę mocnych maszyn,
+							podczas gdy do typowych prac biurowych wystarczają znacznie tańsze zestawy w podstawowej
+							konfiguracji.
+							W związku z rozwojem technologicznym oraz przekraczaniem kolejnych barier miniaturyzacji
+							wielu układów scalonych czy innych podzespołów elektronicznych,
+							a przede wszystkim w związku z upowszechnieniem się nowoczesnych technologii,
+							a co za tym idzie przeniesieniem produkcji do Azji, spadły ceny komputerów przenośnych (laptopów),
+							a ich liczba w stosunku do komputerów stacjonarnych ciągle rośnie.
+						</p>
 					</div>
 				</td>
 				<td>
 					<div class="image-container">
 						<img id="Gaming" src="image/gaming.jpg" alt="Gaming PC">
-						<p class="opis">Komputery Gamingowe</p>
+						<p class="opis">Komputer do gier, to wyspecjalizowany komputer osobisty przeznaczony do grania w
+							gry wideo o wysokich standardach. Komputery do gier zazwyczaj różnią się od popularnych
+							komputerów osobistych tym, że wykorzystują wysokowydajne karty graficzne, procesor o dużej
+							liczbie rdzeni i surową wydajność oraz wydajniejszą pamięć RAM.
+							Komputery do gier są również używane do innych wymagających zadań,
+							takich jak edycja wideo. Gracze i entuzjaści komputerów mogą zdecydować
+							się na podkręcenie swoich procesorów i procesorów graficznych,
+							aby uzyskać dodatkową wydajność. Dodatkowy pobór mocy potrzebny do przetaktowania dowolnego
+							procesora często wymaga dodatkowego chłodzenia, zwykle poprzez
+							chłodzenie powietrzem lub chłodzenie wodą.
+							Do 2021 r. sprzedano ogółem 65,1 mln produktów do gier, z czego 27,9 mln to notebooki do gier,
+							19,7 mln to monitory do gier, a 17,5 mln to komputery stacjonarne do gier.
+						</p>
 					</div>
 				</td>
 			</tr>
@@ -65,9 +96,13 @@
 	<div id="contact">
 		<h2>Kontakt</h2>
 		<p>Zapraszamy do kontaktu przez formularz</p>
-		<form>
-			<label for="fMessage">Wiadomość:</label><br>
-			<input type="textarea" id="message" name="message" rows="10" cols="30" value="Tutaj wpisz swoje pytania."><br>
+		<form action="mailto:someone@example.com" method="post" enctype="text/plain">
+			E-mail:<br>
+			<input type="text" name="mail"><br>
+			Wiadomość:<br>
+			<input type="text" name="wiadomość" size="50"><br><br>
+			<input type="submit" value="Wyślij">
+			<input type="reset" value="Reset">
 		</form>
 	</div>
 </body>

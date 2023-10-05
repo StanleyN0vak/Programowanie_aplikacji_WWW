@@ -2,38 +2,52 @@ body {
 	background-color: rgb(1, 115, 46);
 }
 
-a {
-	color: black;
-	float: left;
+#menu {
+
 }
 
-#menu {
+a {
+	float: left;
+	color: #f2f2f2;
 	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+a:hover {
+	background-color: darkgreen;
 }
 
 #core {
-	margin: auto;
-	width: 50%;
+	float: left;
 	padding: 10px;
 	text-align: center;
 }
 
-div.image-container {
-	width: 80%;
-	background-color: white;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+img {
+	float: left;
+	margin: 5px;
 }
 
-img {
-	width: 100%;
+#OldPc {
+	width: 20%;
+}
+
+#Poleasing {
+	width: 80%;
+}
+
+#Gaming {
+	width: 50%;
 }
 
 p.opis {
-	text-align: center;
-	padding: 10px 20px;
+	text-align: justify;
 }
 
 #contact {
+	float: left;
 	margin: auto;
 	width: 50%;
 	padding: 10px;
@@ -41,12 +55,4 @@ p.opis {
 
 ul {
 	list-style-type: none;
-}
-
-li {
-	position: relative;
-	float: left;
-	display: block;
-	right: 50%;
-	
 }

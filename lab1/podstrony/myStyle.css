@@ -2,10 +2,6 @@ body {
 	background-color: rgb(118, 127, 218);
 }
 
-#menu {
-
-}
-
 a {
 	float: left;
 	color: black;
@@ -18,7 +14,37 @@ a {
 a:hover {
 	background-color: #3e40c0;
 	color: floralwhite;
+	border-radius: 20px;
+}
+
+img {
+	float: left;
+	margin: 5px;
 	border-radius: 15%;
+}
+
+td {
+	border : black solid 5px;
+	border-radius: 20px;
+	width: 25%;
+	padding: 5px;
+}
+
+p {
+	font-size: 17px;
+	text-align: justify;
+}
+
+ul {
+	list-style-type: none;
+	width: 95%;
+	display: table;
+	text-align: center;
+}
+
+li {
+	display: inline-block;;
+	float: none;
 }
 
 .core {
@@ -27,10 +53,11 @@ a:hover {
 	text-align: center;
 }
 
-img {
-	float: left;
-	margin: 5px;
-	border-radius: 15%;
+.gallery {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
 }
 
 #OldPc {
@@ -44,7 +71,6 @@ img {
 #Gaming {
 	float: right;
 	width: 50%;
-	top: 50px;
 }
 
 #Eniac {
@@ -64,40 +90,9 @@ img {
 	width: 50%;
 }
 
-.galery {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 50%;
-}
-
-td {
-	border : black solid 5px;
-	border-radius: 5%;
-	width: 25%;
-	padding: 5px;
-}
-
-p {
-	font-size: 17px;
-	text-align: justify;
-}
-
 #contact {
 	float: left;
 	margin: auto;
 	width: 50%;
 	padding: 10px;
-}
-
-ul {
-	list-style-type: none;
-	width: 97%;
-	display: table;
-	text-align: center;
-}
-
-li {
-	display: inline-block;;
-	float: none;
 }

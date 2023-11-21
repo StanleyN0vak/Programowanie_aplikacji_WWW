@@ -49,6 +49,11 @@ li {
 	float: none;
 }
 
+iframe {
+	float: left;
+	display: inline-block;
+}
+
 .core {
 	float: left;
 	padding: 10px;
@@ -77,6 +82,11 @@ li {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+}
+
+.php {
+	display: block;
+	float: left;
 }
 
 #OldPc {

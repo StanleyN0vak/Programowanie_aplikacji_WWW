@@ -1,25 +1,28 @@
 <?php
     error_reporting(E_ALL^E_NOTICE^E_WARNING);
 
-    $historia = "/html/Historia.html";
-    $karty = "/html/Karty_graficzne.html";
-    $wirtualna = "/html/Wirtualna_rzeczywistosc.html";
-    $rodzaje = "/html/Rodzaje_Ramu.html";
-    $galeria = "/html/Galeria.html";
-
+    $historia = "./html/Historia.html";
+    $karty = "./html/Karty_graficzne.html";
+    $wirtualna = "./html/Wirtualna_rzeczywistosc.html";
+    $rodzaje = "./html/Rodzaje_Ramu.html";
+    $galeria = "./html/Galeria.html";
+    $video = "./html/video.html";
+    /*
     if (file_exists($historia)) {
         echo "The file $historia exists";
     } else {
         echo "The file $historia does not exists";
     }
+    */
 
-    if($_GET['idp']=='')$strona='/html/glowna.html';
-    if($_GET['idp']=='Historia')$strona='/html/Historia.html';
-    if($_GET['idp']=='Karty_graficzne')$strona='/html/Karty_graficzne.html';
-    if($_GET['idp']=='Wirtualna_rzeczywistosc')$strona='/html/Wirtualna_rzeczywistosc.html';
-    if($_GET['idp']=='Rodzaje_Ramu')$strona='/html/Rodzaje_Ramu.html';
-    if($_GET['idp']=='Galeria')$strona='/html/Galeria.html';
-    if($_GET['idp']=='js')$strona='/html/js.html';
+    if($_GET['idp']=='')$strona='./html/glowna.html';
+    if($_GET['idp']=='Historia')$strona='./html/Historia.html';
+    if($_GET['idp']=='Karty_graficzne')$strona='./html/Karty_graficzne.html';
+    if($_GET['idp']=='Wirtualna_rzeczywistosc')$strona='./html/Wirtualna_rzeczywistość.html';
+    if($_GET['idp']=='Rodzaje_Ramu')$strona='./html/Rodzaje_Ramu.html';
+    if($_GET['idp']=='Galeria')$strona='./html/Galeria.html';
+    if($_GET['idp']=='js')$strona='./html/js.html';
+    if($_GET['idp']=='video')$strona='./html/video.html';
 ?>
 <!DOCTYPE html>
 <html lang="PL">
@@ -40,13 +43,16 @@
         <li><a href="index.php?idp=Karty_graficzne">Karty Graficzne</a></li>
         <li><a href="index.php?idp=Galeria">Galeria</a></li>
         <li><a href="index.php?idp=js">Skrypty</a></li>
+        <li><a href="index.php?idp=video">Video</a></li>
     </ul>
 </div>
+<div class="php">
 	<?php
 	include($strona);
 	    $nr_indeksu = "166329";
 	    $nrGrupy = '4';
 	    echo "Autor: Mateusz Szymański" .$nr_indeksu. " grupa " .$nrGrupy. "<br><br>";
 	?>
+</div>
 </body>
 </html>

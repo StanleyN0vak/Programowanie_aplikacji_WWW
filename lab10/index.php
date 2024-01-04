@@ -14,7 +14,8 @@
         'Rodzaje_Ramu' => './html/Rodzaje_Ramu.html',
         'Galeria' => './html/Galeria.html',
         'js' => './html/js.html',
-        'video' => './html/video.html'
+        'video' => './html/video.html',
+        'admin' => './admin/admin_panel.php'
     ];
 
     // Domyślna strona, jeśli 'idp' nie jest ustawione lub nieznane

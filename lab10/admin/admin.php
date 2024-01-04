@@ -1,32 +1,18 @@
 <?php
+session_start();
+
+// Sprawdź, czy administrator jest zalogowany
+if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
+    // Jeśli nie jest zalogowany, przekieruj go na stronę logowania
+    header('Location: admin_panel.php');
+    exit();
+}
 
 $connection = mysqli_connect("localhost", "root", "", "moja_strona");
 
     if (!$connection){
         die("Błąd połączenia z bazą danych: " . mysqli_connect_error());
     }
-
-function FormularzLogowania()
-{
-   $wynik ='
-   <div class="logowanie">
-    <h1 class="heading">Panel CMS:</h1>
-    <div class="logowanie">
-        <form method="post" name="LoginForm" enctype="multipart/form_data" action="'.$_SERVER['REQUEST_URI'].'">
-            <table class="logowanie">
-                <tr><td class="log4_t">[email]</td><td><input type="text" name="login_email" class="logowanie" /></td></tr>
-                <tr><td class="log4_t">[haslo]</td><td><input type="password" name="login_pass" class="logowanie" /></td></tr>
-                <tr><td>&nbsp;</td><td><input type="submit" name="login_submit" class="logowanie" value="zaloguj" /></td></tr>
-            </table>
-        </form>
-    </div>
-   </div>
-   ';
-
-   echo $wynik;
-}
-
-FormularzLogowania();
 
 function ListaPodstron()
 {

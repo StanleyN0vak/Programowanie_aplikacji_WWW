@@ -25,17 +25,20 @@ function dodajDoKoszyka($id_prod, $ile_sztuk)
 
     if ($result && mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
+        if ($ile_sztuk <= $row['ilosc_dostepnych_sztuk_w_magazynie']){
+            $produkt = array(
+                'id_prod' => $row['id'],
+                'tytul' => $row['tytul'],
+                'opis' => $row['opis'],
+                'cena_netto' => $row['cena_netto'],
+                'podatek_vat' => $row['podatek_vat'],
+                'ile_sztuk' => $ile_sztuk
+            );
 
-        $produkt = array(
-            'id_prod' => $row['id'],
-            'tytul' => $row['tytul'],
-            'opis' => $row['opis'],
-            'cena_netto' => $row['cena_netto'],
-            'podatek_vat' => $row['podatek_vat'],
-            'ile_sztuk' => $ile_sztuk
-        );
-
-        $_SESSION['koszyk'][] = $produkt;
+            $_SESSION['koszyk'][] = $produkt;
+        } else {
+            echo "<p>Nie można dodać więcej sztuk niż jest dostępnych w magazynie.</p>";
+        }
     }
 }
 
@@ -118,7 +121,7 @@ $result = mysqli_query($connection, $query);
 <?php
 if (!empty($_SESSION['koszyk'])) {
     foreach ($_SESSION['koszyk'] as $produkt) {
-        echo "<p>{$produkt['tytul']} - Cena za sztuke: {$produkt['cena_netto']} - Ilość: {$produkt['ile_sztuk']}</p>";
+        echo "<p>{$produkt['tytul']} - Cena netto za sztuke: {$produkt['cena_netto']} - Ilość: {$produkt['ile_sztuk']}</p>";
         echo "<form method='post' action='koszyk.php'>";
         echo "<input type='hidden' name='id_prod' value='{$produkt['id_prod']}'>";
         echo "<label for='nowa_ilosc'>Ilość:</label>";

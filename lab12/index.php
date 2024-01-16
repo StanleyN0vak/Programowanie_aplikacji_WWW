@@ -4,18 +4,17 @@
 
     // Dołącz plik konfiguracyjny
     include("cfg.php");
-    include("showpage.php");
 
     // Definicje ścieżek do plików
     $strony = [
-        'glowna' => './html/glowna.html',
-        'Historia' => './html/Historia.html',
-        'Karty_graficzne' => './html/Karty_graficzne.html',
-        'Wirtualna_rzeczywistosc' => './html/Wirtualna_rzeczywistość.html',
-        'Rodzaje_Ramu' => './html/Rodzaje_Ramu.html',
-        'Galeria' => './html/Galeria.html',
-        'js' => './html/js.html',
-        'video' => './html/video.html',
+        'glowna' => '1',
+        'Historia' => '2',
+        'Karty_graficzne' => '4',
+        'Wirtualna_rzeczywistosc' => '7',
+        'Rodzaje_Ramu' => '5',
+        'Galeria' => '8',
+        'js' => '3',
+        'video' => '6',
         'koszyk' => 'koszyk.php',
         'admin' => './admin/admin_panel.php'
     ];
@@ -38,17 +37,30 @@
 <div class="menu">
     <ul>
         <?php
-        // Generuj dynamiczne menu
-        foreach ($strony as $id => $sciezka) {
-            echo '<li><a href="index.php?idp=' . htmlspecialchars($id) . '">' . ucfirst(str_replace('_', ' ', pathinfo($sciezka, PATHINFO_FILENAME))) . '</a></li>';
-        }
+        // Generuj dynamiczne menu na podstawie zawartości bazy danych
+        include("showpage.php");
+        $pages = PobierzListeStron();
+
+        foreach ($pages as $page) {
+                $id = htmlspecialchars($page['id']);
+                $title = ucfirst(str_replace('_', ' ', pathinfo($page['page_title'], PATHINFO_FILENAME)));
+                echo '<li><a href="index.php?idp=' . $id . '">' . $title . '</a></li>';
+                }
+        $adminPath = $strony['admin'];
+        $koszykPath = $strony['koszyk'];
+        echo '<li><a href="' . $adminPath . '">Admin Panel</a></li>';
+        echo '<li><a href="' . $koszykPath . '">Koszyk</a></li>';
         ?>
     </ul>
 </div>
 <div class="php">
 	<?php
-	// Dołącz zawartość strony
-	include($strona);
+	// Sprawdź, czy 'idp' zostało ustawione w adresie URL
+    $stronaId = isset($_GET['idp']) ? $_GET['idp'] : 'glowna';
+
+   	// Dołącz zawartość strony z bazy danych
+   	$stronaContent = PokazPodstrone($stronaId);
+   	echo $stronaContent;
 
 	// Bezpieczne wyświetlanie informacji
 	$nr_indeksu = "166329";

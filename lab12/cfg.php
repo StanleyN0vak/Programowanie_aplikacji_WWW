@@ -3,8 +3,8 @@
     $dbuser = 'root';
     $dbpass = '';
     $baza = 'moja_strona';
-    $login = "admin";
-    $pass = "admin123";
+    $loginA = "admin";
+    $passA = "admin123";
 
     //Połączenie z bazą danych
     $link = mysqli_connect($dbhost, $dbuser, $dbpass, $baza);
@@ -14,5 +14,5 @@
     }
 
     //echo 'Połączenie udane!';
-    mysqli_close($link);
+    //mysqli_close($link);
 ?>

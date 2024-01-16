@@ -1,18 +1,20 @@
 <?php
 session_start();
 
+include("../cfg.php");
+
 // Sprawdź, czy formularz logowania został przesłany
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $login = $_POST['login'];
     $password = $_POST['password'];
 
     // Sprawdź, czy dane logowania są poprawne
-    if ($login == 'admin' && $password == 'admin123') {
+    if ($login == $loginA && $password == $passA) {
         // Ustaw flagę zalogowanego administratora w sesji
         $_SESSION['admin_logged_in'] = true;
 
         // Przekieruj do panelu admina lub wyświetl komunikat o sukcesie
-        header('Location: ./admin/admin.php');
+        header('Location: admin.php');
         exit();
     } else {
         // Wyświetl komunikat o błędnych danych logowania
@@ -20,6 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+<style>
+    <?php include '../css/adminStyle.css'; ?>
+</style>
 <div class="logowanie">
     <h1 class="heading">Panel CMS:</h1>
     <div class="logowanie">
